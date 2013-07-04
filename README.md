@@ -39,6 +39,8 @@ Roughtly it is a way to generate same data type from different engines running o
  This version only support the Cloud Connector without its options: Data Storage, Cloud Storage, Publish Subscribe.
  An extended version will include these options as new features in the module.
 
+ License: New BSD License
+
  Please Do Report any error, either here or on our site via the contact-us page
 
 
