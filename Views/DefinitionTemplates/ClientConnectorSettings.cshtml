@@ -1,0 +1,31 @@
+﻿@model Datwendo.ClientConnector.Settings.ClientConnectorSettings
+@using Orchard.Utility.Extensions;
+
+@{
+    Style.Require("ClientConnectorSettings");
+}
+<fieldset>
+    <div>
+         @Html.LabelFor(m => m.ConnectorId, @T("Connector Id"))
+        @Html.EditorFor(m => m.ConnectorId)
+        @Html.ValidationMessageFor(m => m.ConnectorId, "*")
+        <span class="hint">@T("Enter your Data Connector Id")</span>
+    </div>
+</fieldset>
+<fieldset>
+    <div>
+        @Html.LabelFor(m => m.SecretKey, @T("Secret Key"))
+        @Html.EditorFor(m => m.SecretKey)
+        @Html.ValidationMessageFor(m => m.SecretKey, "*")
+        <span class="hint">@T("Enter your Data Connector Secret Key")</span>
+    </div>
+</fieldset>
+<fieldset>
+    <div>
+        @Html.CheckBoxFor(m => m.IsFast)
+        <label class="forcheckbox" for="@Html.FieldIdFor(m => m.IsFast)">@T("Fast Protocol")</label>
+        <span class="hint">@T("Check when your connector has a fast protocol")</span>
+    </div>
+</fieldset>
+
+@Display.TokenHint()

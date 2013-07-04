@@ -1,0 +1,13 @@
+﻿@model Datwendo.ClientConnector.ViewModels.ClientConnectorPartEditViewModel
+@using Datwendo.ClientConnector
+@using Orchard.Utility.Extensions;
+
+@if(Model.Settings.ConnectorId == -0) {
+    <div class="message message-Error">@T("The current Content Type does not have a Connector Id. Please edit the settings first.")</div>
+    return;
+}
+@if(string.IsNullOrEmpty(Model.Settings.SecretKey)) {
+    <div class="message message-Error">@T("The current Content Type does not have a Scret Key. Please edit the settings first.")</div>
+    return;
+}
+

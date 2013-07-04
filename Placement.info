@@ -1,0 +1,8 @@
+﻿<Placement>
+  <Place Parts_ClientConnectorAdminSettings_Edit="Content:0"/>
+  <Place Parts_ClientConnectorAdminSettings="Content:2"/>
+  <Place Parts_ClientConnectorSettings_Edit="Content:0"/>
+  <Place Parts_ClientConnectorSettings="Content:2"/>
+  <Place Parts_ClientConnector_Edit="Content:2"/>
+  <Place Parts_ClientConnector="Content:2"/>
+</Placement>

@@ -1,0 +1,12 @@
+﻿Name: Datwendo Client Connector
+AntiForgery: enabled
+Author: Christian Surieux
+Website: http://www.datwendo.com
+Version: 1.0
+OrchardVersion: 1.7
+Description: Client for Datwendo Cloud Connector
+Features:
+    Datwendo.ClientConnector:
+	    Name: Datwendo Client Connector
+		Description: Client for Datwendo Cloud Connector.
+	    Category: Developper

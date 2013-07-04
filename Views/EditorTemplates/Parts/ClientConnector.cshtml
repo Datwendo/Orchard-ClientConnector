@@ -1,0 +1,12 @@
+﻿@using Datwendo.ClientConnector.Models
+@using Orchard.Utility.Extensions
+
+@model Datwendo.ClientConnector.Models.ClientConnectorPart
+
+<fieldset>
+    <legend>@T("CLient Connector")</legend>
+    @Html.LabelFor(model => model.CIndex)
+    @Html.TextBoxFor(model => model.CIndex, new { disabled = "disabled" })   
+    @Html.ValidationMessageFor(model => model.CIndex,"*") 
+
+</fieldset>

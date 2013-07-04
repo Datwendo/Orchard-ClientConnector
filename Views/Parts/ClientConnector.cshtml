@@ -1,0 +1,10 @@
+﻿@model dynamic
+
+@using Datwendo.ClientConnector.Models
+@using Orchard.ContentManagement
+
+@{
+    var mdl = ((IContent)Model.ContentPart).As<ClientConnectorPart>();
+}
+
+@mdl.CIndex

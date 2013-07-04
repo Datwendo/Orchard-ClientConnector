@@ -1,0 +1,32 @@
+@model Datwendo.ClientConnector.Models.ClientConnectorAdminSettingsPart
+@using Orchard.ContentManagement;
+
+@{ Layout.Title = T("Datwendo Client Cloud Connector Settings").ToString(); }
+
+<fieldset>
+    <legend>@T("Connector Parameters")</legend>
+    <div>
+        @Html.LabelFor(m => m.PublisherId, @T("PublisherId Id"))
+        @Html.EditorFor(m => m.PublisherId)
+        @Html.ValidationMessageFor(m => m.PublisherId, "*")
+        <span class="hint">@T("Enter this site Publisher Id")</span>
+    </div>
+    <div>
+        @Html.LabelFor(m => m.ServiceProdUrl, @T("Service Url"))
+        @Html.EditorFor(m => m.ServiceProdUrl)
+        @Html.ValidationMessageFor(m => m.ServiceProdUrl, "*")
+        <span class="hint">@T("Enter Datwendo Connector Service Url")</span>
+    </div>
+    <div>
+        @Html.LabelFor(m => m.CurrentAPI, @T("API"))
+        @Html.EditorFor(m => m.CurrentAPI)
+        @Html.ValidationMessageFor(m => m.CurrentAPI, "*")
+        <span class="hint">@T("Enter Connector API Version")</span>
+    </div>
+    <div>
+        @Html.LabelFor(m => m.TransactionDelay, @T("Delay"))
+        @Html.EditorFor(m => m.TransactionDelay)
+        @Html.ValidationMessageFor(m => m.TransactionDelay, "*")
+        <span class="hint">@T("Enter your Data Transaction delay Id")</span>
+    </div>
+</fieldset>

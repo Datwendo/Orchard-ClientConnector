@@ -1,0 +1,19 @@
+﻿.clientconnector-settings-default {
+    width: 5%;
+}
+.clientconnector-settings-name {
+    width: 20%
+}
+
+.clientconnector-settings-pat {
+    width: 30%
+}
+
+.clientconnector-settings-desc {
+    width: 40%
+}
+
+.clientconnector-settings-actions {
+    width: 10%;
+    text-align: right;
+}
