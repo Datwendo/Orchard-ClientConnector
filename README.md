@@ -21,21 +21,28 @@ Roughtly it is a way to generate same data type from different engines running o
 - blob data
 
 1) Go to http://www.datwendo.com, register (the Git OAuth register will be available soon) then start a 15 days demo Connector or buy some months of Service.
+
 2) collect your connector main parameters:
  - Id
  - Secret key
  - Protocol (Fast or Secure)
- 3) Install the module in Orchard (until it appear in gallery, you will need to clone this repo and build it), and enable
- 4) Set the site settings parameters (The demo Dawtendo Server is http://datwendosvc.cloudapp.net, the API version 1, the key delai is not important for demo connectors let it to 200)
- 5) Create a Content Type using various parts and fields, or moddify an existing Content Type
- 6) Add it the ClientConnector Part, fix the related connector parameters:
+ 
+3) Install the module in Orchard (until it appear in gallery, you will need to clone this repo and build it), and enable
+ 
+4) Set the site settings parameters (The demo Dawtendo Server is http://datwendosvc.cloudapp.net, the API version 1, the key delai is not important for demo connectors let it to 200)
+ 
+5) Create a Content Type using various parts and fields, or moddify an existing Content Type
+ 
+6) Add it the ClientConnector Part, fix the related connector parameters:
  - Id,
  - Secret Key
  - Protocol (always Fast for Demo), mandatory with only 2 values today: Fast/Secure
- 7) Arrange the display for the ClientConnector Part in your local theme placement.info
- 8) Create new Content Items -> they will automatically receive a new unique Id
 
- Limitation:
+7) Arrange the display for the ClientConnector Part in your local theme placement.info
+
+8) Create new Content Items -> they will automatically receive a new unique Id
+
+ Limitations:
  This version only support the Cloud Connector without its options: Data Storage, Cloud Storage, Publish Subscribe.
  An extended version will include these options as new features in the module.
 
