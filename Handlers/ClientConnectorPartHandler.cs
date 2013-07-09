@@ -13,7 +13,7 @@ using Orchard.Data;
 
 using Orchard.ContentManagement;
 using Orchard.Core.Common.Models;
-using Orchard.ContentManagement.Handlers;
+
 
 namespace Datwendo.ClientConnector.Handlers
 {
@@ -43,7 +43,7 @@ namespace Datwendo.ClientConnector.Handlers
         {
             var part = context.ContentItem.As<ClientConnectorPart>();
 
-            if (part != null)
+            if (part != null && part.CIndex != 0)
             {
                 context.Metadata.Identity.Add("Identifier", part.CIndex.ToString());
             }
