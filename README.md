@@ -5,7 +5,7 @@ Datwendo.ClientConnector Orchard Module
 
 *Orchard users are welcome, Datwendo Cloud Connector Service is now running, send me an email to receive a dedicated free Connector with a longer free live delay than 14 days and other parameters than default demo's.*
 
-There is actually a branch namme 'Data Storage' for a v2 client Connector which will work with Connector Feeder (master) and Connector Listener (Data Storage Branch)
+There is actually a branch named 'Data Storage' for a v2 Client Connector which will work with modules 'Connector Feeder' (master branch) and 'Connector Listener' (Data Storage Branch)
 Reason for the branch is they necessitate an Orchard pull to be accepted (https://orchard.codeplex.com/SourceControl/network/forks/CSADNT/EditContentItemSettings/contribution/5422).
 You may apply this pull to your orchard without any risk, it takes care to preserve all existing code.
 And you will obtain the new extended support for our Data Storage Option inside Orchard.
