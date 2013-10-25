@@ -29,7 +29,6 @@ namespace Datwendo.ClientConnector.Models {
         {
             get;
             set;
-        }
-
+        }     
     }
 }

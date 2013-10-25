@@ -21,13 +21,14 @@ namespace Datwendo.ClientConnector {
                     );
             SchemaBuilder.CreateTable("ClientConnectorPartRecord", table => table
                 .ContentPartRecord()
-                .Column<string>("CIndex", c => c.WithDefault(0))
+                .Column<int>("CIndex", c => c.WithDefault(0))
+                .Column<string>("DataSent", c => c.Nullable().WithLength(4096))
                 );
 
             ContentDefinitionManager.AlterPartDefinition("ClientConnectorPart",
                 builder => builder.Attachable());
 
-            return 2;
+            return 3;
         }
 
         public int UpdateFrom1()
@@ -44,5 +45,21 @@ namespace Datwendo.ClientConnector {
             return 2;
         }
 
+        public int UpdateFrom2()
+        {
+            SchemaBuilder.AlterTable("ClientConnectorPartRecord", table => table
+                    .DropColumn("CIndex")
+                    );
+            SchemaBuilder.AlterTable("ClientConnectorPartRecord", table => table
+                    .AddColumn<int>("CIndex", c => c.WithDefault(0)));
+            return 3;
+        }
+
+        public int UpdateFrom3()
+        {
+            SchemaBuilder.AlterTable("ClientConnectorPartRecord", table => table
+                    .AddColumn<string>("DataSent", c => c.Nullable().WithLength(4096)));
+            return 4;
+        }
     }
 }

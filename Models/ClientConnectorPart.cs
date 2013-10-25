@@ -23,6 +23,12 @@ namespace Datwendo.ClientConnector.Models
         {
             get { return Record.CIndex; }
             set { Record.CIndex = value; }
-        }        
+        }
+
+        public string DataSent
+        {
+            get { return Record.DataSent; }
+            set { Record.DataSent = value; }
+        }          
     }
 }

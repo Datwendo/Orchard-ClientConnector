@@ -9,4 +9,5 @@ Features:
     Datwendo.ClientConnector:
 	    Name: Datwendo Client Connector
 		Description: Client for Datwendo Cloud Connector.
-	    Category: Developper
+	    Category: Developer
+		Dependencies: Orchard.ContentTypes, Datwendo.ContentHelpers
