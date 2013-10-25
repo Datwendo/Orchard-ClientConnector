@@ -3,7 +3,14 @@ Orchard-ClientConnector
 
 Datwendo.ClientConnector Orchard Module
 
-*Orchard users are welcome, Cloud Connector is in test period until the end of summer, send me an email to receive a dedicated free Connector with a longer free live delay than 14 days and other parameters than default demo's.*
+*Orchard users are welcome, Datwendo Cloud Connector Service is now running, send me an email to receive a dedicated free Connector with a longer free live delay than 14 days and other parameters than default demo's.*
+
+There is actually a branch namme 'Data Storage' for a v2 client Connector which will work with Connector Feeder (master) and Connector Listener (Data Storage Branch)
+Reason for the branch is they necessitate an Orchard pull to be accepted (https://orchard.codeplex.com/SourceControl/network/forks/CSADNT/EditContentItemSettings/contribution/5422).
+You may apply this pull to your orchard without any risk, it takes care to preserve all existing code.
+And you will obtain the new extended support for our Data Storage Option inside Orchard.
+
+Concerning base version (master branch)
 
 It contains an attachable part which is in charge of generating an Identity using a Cloud Connector.
 Very nice, you can attach it to any Content Type you create. 
@@ -46,6 +53,13 @@ Roughtly it is a way to generate same data type from different engines running o
  This version only support the Cloud Connector without its options: Data Storage, Cloud Storage, Publish Subscribe.
  An extended version will include these options as new features in the module.
 
+
+Concerning Data Storage Branch:
+This version fully supports the Data Storage option for Orchard, it works in conjonction with Connector Feeder and Connector Listener.
+Find extended documentation in these modules.
+This branch should be merged in Master as soon as the Orchard pull problem is solved
+
+
  License: New BSD License
 
  Please Do Report any error, either here or on our site via the contact-us page
@@ -55,3 +69,5 @@ Soon on the Orchard Gallery.
 
 Thanks
 Christian Surieux
+contact@datwendo.com
+http://www.datwendo.com
