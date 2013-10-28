@@ -55,9 +55,12 @@ Roughtly it is a way to generate same data type from different engines running o
 
 
 Concerning Data Storage Branch:
+
 This version fully supports the Data Storage option for Orchard, it works in conjonction with Connector Feeder and Connector Listener.
 Find extended documentation in these modules.
 This branch should be merged in Master as soon as the Orchard pull problem is solved
+This branch has a dependency on the module 'Datwendo.ContentHelpers' you can download in the Utilities repo here.
+
 
 
  License: New BSD License
