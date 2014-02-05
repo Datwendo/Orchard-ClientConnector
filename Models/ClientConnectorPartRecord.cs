@@ -14,8 +14,8 @@ namespace Datwendo.ClientConnector.Models
     [OrchardFeature("Datwendo.ClientConnector")]
     public class ClientConnectorPartRecord: ContentPartRecord 
     {
-        public virtual int CIndex { get; set; }        
-       
+        public virtual int CIndex { get; set; }
+        public virtual string DataSent { get; set; } 
     }
 
 }

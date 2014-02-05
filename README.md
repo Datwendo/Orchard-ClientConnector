@@ -12,10 +12,17 @@ And you will obtain the new extended support for our Data Storage Option inside 
 
 Concerning base version (master branch)
 
-It contains an attachable part which is in charge of generating an Identity using a Cloud Connector.
+Previous DataStorage branch has been merged in Master after Orchard Pull request negociated and adapted.
+
+This module contains an attachable part which is in charge of generating an Identity using a Cloud Connector.
 Very nice, you can attach it to any Content Type you create. 
 There are 'Site Parameters' to fix global values as the Service Url for Datwendo, the validity delay for security keys, the Subscriber Id.
 Other parameters are content-type dependant, they are grouped on each Content Type in such a way that there could be different Connectors for different Content Types.
+
+This version fully supports the Data Storage option for Orchard, it works in conjonction with Connector Feeder and Connector Listener.
+Find extended documentation in these modules.
+This branch has a dependency on the module 'Datwendo.ContentHelpers' you can download in the Utilities repo.
+
 Beware that this module needs Framework 4.5 and its last extensions related to HttpClient rewrite using asynch methods.
 You have 2 options, either you move your full Orchard build in 4.5 (it runs perfectly, just change 4.0 to 4.5 in each project file), either you keep this sole module in 4.5 but it is less clean...
 

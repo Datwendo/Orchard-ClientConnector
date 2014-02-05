@@ -4,7 +4,6 @@ using System;
 
 namespace Datwendo.ClientConnector.Models
 {
-
     public class ClientConnectorAdminSettingsPart : ContentPart<ClientConnectorAdminSettingsPartRecord> 
     {
         public int PublisherId
@@ -30,5 +29,6 @@ namespace Datwendo.ClientConnector.Models
             get { return Record.TransactionDelay; }
             set { Record.TransactionDelay = value; }
         }
+
     }
 }

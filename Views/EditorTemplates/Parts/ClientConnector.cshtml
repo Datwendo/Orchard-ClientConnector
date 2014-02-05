@@ -5,8 +5,14 @@
 
 <fieldset>
     <legend>@T("CLient Connector")</legend>
+    <div>
     @Html.LabelFor(model => model.CIndex)
     @Html.TextBoxFor(model => model.CIndex, new { disabled = "disabled" })   
     @Html.ValidationMessageFor(model => model.CIndex,"*") 
-
+    </div>
+    <div>
+    @Html.LabelFor(model => model.DataSent)
+    @Html.TextBoxFor(model => model.DataSent, new { disabled = "disabled" })   
+    @Html.ValidationMessageFor(model => model.DataSent,"*") 
+    </div>
 </fieldset>

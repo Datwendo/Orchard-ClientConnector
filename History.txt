@@ -1,0 +1,18 @@
+﻿10-31-2013
+Unfortunately in v1 the CIndex was declared as a string, it is an int
+         BUT THERE IS A BUG IN ORCHARD 1.7 un til actual 1.7.2 https://orchard.codeplex.com/workitem/19298
+         this bug when droping a clumn does not chack for constraint and sql server needs first droping the constraint
+         YOU MUST DROP THE CONTRAINT by hand either using SQL Server Management Studio, either using a script as expliend down here
+         A way to find the name of a default constraint for a given table and column could be something like this: 
+            declare @column nvarchar(128) 
+            declare @table nvarchar(128) 
+
+            set @table = 'table1' 
+            set @column = 'column_1' 
+
+            select dc."name" as "DF_constraint" 
+            from sys.default_constraints dc 
+            join sys.columns c on c.default_object_id = dc.object_id 
+            where dc.parent_object_id = OBJECT_ID(@table) 
+            and c."name" = @column
+when the constraint is dropped, you can run the update module.

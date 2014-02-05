@@ -1,12 +1,15 @@
 ﻿@model Datwendo.ClientConnector.Settings.ClientConnectorSettings
-@using Orchard.Utility.Extensions;
+@using Orchard.Utility.Extensions
+@using Datwendo.ClientConnector.Settings
 
 @{
     Style.Require("ClientConnectorSettings");
+    var lst = RequestTypeSt.GetRequestTypeLst(T, Model.RequestType);
+    var selReq = Model.RequestType;
 }
 <fieldset>
     <div>
-         @Html.LabelFor(m => m.ConnectorId, @T("Connector Id"))
+        @Html.LabelFor(m => m.ConnectorId, @T("Connector Id"))
         @Html.EditorFor(m => m.ConnectorId)
         @Html.ValidationMessageFor(m => m.ConnectorId, "*")
         <span class="hint">@T("Enter your Data Connector Id")</span>
@@ -27,5 +30,39 @@
         <span class="hint">@T("Check when your connector has a fast protocol")</span>
     </div>
 </fieldset>
-
+<fieldset>
+    <div>
+        @Html.LabelFor(m => m.RequestType, @T("Request type"))
+        @Html.DropDownListFor(m => m.RequestType, lst,selReq )
+        <span class="hint">@T("Should Connector simply look for new Index or send data with its request")</span>
+    </div>
+</fieldset>   
+<fieldset>
+    <div>
+        @Html.CheckBoxFor(m => m.KeepDataCopy)
+        <label class="forcheckbox" for="@Html.FieldIdFor(m => m.KeepDataCopy)">@T("Keep a copy of Data")</label>
+        <span class="hint">@T("Check to keep a copy of data sent with connector request")</span>
+    </div>
+</fieldset>   
+<fieldset>
+    <div>
+        @Html.LabelFor(m => m.PartName, @T("Part Name"))
+        @Html.DropDownListFor(m => m.PartName, new SelectList(Model.AllParts, "Name", "DisplayName", Model.PartName), new { @class = "partname" })
+        <span class="hint">@T("The Part to collect data from (must be attached to the same component a this connector")</span>
+    </div>
+</fieldset>
+<fieldset>
+    <div>
+        @Html.LabelFor(m => m.PropertyName, @T("Property Name"))
+        @Html.DropDownListFor(m => m.PropertyName, new SelectList( Model.AllProperties, Model.PropertyName), new {@class="propertyname" })
+        <span class="hint">@T("The property to use to collect data from the previously selected Part")</span>
+    </div>
+</fieldset>
+<fieldset>
+    <div>
+        @Html.LabelFor(m => m.FieldName, @T("Field Name"))
+        @Html.DropDownListFor(m => m.FieldName, new SelectList(Model.AllFields, "Name", "DisplayName", Model.FieldName), new {@class="fieldname" })
+        <span class="hint">@T("The Field to use to collect data from the previously selected Part")</span>
+    </div>
+</fieldset>
 @Display.TokenHint()
