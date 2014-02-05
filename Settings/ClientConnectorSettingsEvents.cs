@@ -38,27 +38,17 @@ namespace Datwendo.ClientConnector.Settings {
                 .Select(c => new { Name = c.Name, DisplayName = c.Name.TrimEnd("Part").CamelFriendly() }).OrderBy(c => c.DisplayName); 
         }
         
-        [Obsolete("Use TypePartEditorEx")]
         public override IEnumerable<TemplateViewModel> TypePartEditor(ContentTypePartDefinition definition) {
-            if (definition.PartDefinition.Name != "ClientConnectorPart")
-                yield break;
 
-            var settings        = definition.Settings.GetModel<ClientConnectorSettings>();
-            settings.AllParts   = GetParts();
-            yield return DefinitionTemplate(settings);
-        }
-
-        public override IEnumerable<TemplateViewModel> TypePartEditorEx(ContentTypeDefinition contentTypeDefinition, ContentTypePartDefinition definition)
-        {
             if (definition.PartDefinition.Name != "ClientConnectorPart")
                 yield break;
 
             var settings                = definition.Settings.GetModel<ClientConnectorSettings>();
-            settings.contentItemName    = contentTypeDefinition.Name;
+            settings.contentItemName    = definition.ContentTypeDefinition.Name;
 
-            ContentPartDefinition ct    = _contentDefinitionManager.GetPartDefinition(contentTypeDefinition.Name);
+            ContentPartDefinition ct = _contentDefinitionManager.GetPartDefinition(definition.ContentTypeDefinition.Name);
             settings.AllFields          = ct.Fields.Any() ? ct.Fields.Select(f => new { Name = f.Name, DisplayName = f.DisplayName }) : new[] { new { Name = string.Empty, DisplayName = "No Fields" } };
-            settings.AllParts           = contentTypeDefinition.Parts.Where(c => c.PartDefinition.Name == contentTypeDefinition.Name || (!ForbidenParts.Contains(c.PartDefinition.Name) && c.PartDefinition.Settings.GetModel<ContentPartSettings>().Attachable))
+            settings.AllParts = definition.ContentTypeDefinition.Parts.Where(c => c.PartDefinition.Name == definition.ContentTypeDefinition.Name || (!ForbidenParts.Contains(c.PartDefinition.Name) && c.PartDefinition.Settings.GetModel<ContentPartSettings>().Attachable))
                 .Select(c => new { Name = c.PartDefinition.Name, DisplayName = c.PartDefinition.Name.TrimEnd("Part").CamelFriendly() }).OrderBy(c => c.DisplayName); ;
             settings.AllProperties      = _contentHelpersService.GetProperties(string.IsNullOrEmpty(settings.PartName) ? settings.AllParts.FirstOrDefault().Name : settings.PartName);
             yield return DefinitionTemplate(settings);
